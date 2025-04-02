@@ -38,8 +38,6 @@
 - ⬜ **Phase 3**: Event system + simple async behavior
 - ⬜ **Phase 4**: Visual rendering (terminal or browser output)
 
-See [`project_golem_milestones.pdf`](./project_golem_milestones.pdf) for the full roadmap.
-
 ---
 
 ## 🧙 Getting Started
