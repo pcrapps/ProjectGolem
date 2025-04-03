@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch GolemJS",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/golemjs/cmd/golemjs/main.go",
+            "cwd": "${workspaceFolder}/golemjs"
+        },
+        {
+            "name": "Launch Toy Browser",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/toybrowser/cmd/toybrowser/main.go",
+            "cwd": "${workspaceFolder}/toybrowser"
+        }
+    ]
+} 

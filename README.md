@@ -1,54 +1,107 @@
-# 🧠 Project Golem
+# Project Golem
 
-*A handcrafted JavaScript interpreter and toy browser, built from scratch in Go.*
+A toy browser and JavaScript engine implementation for learning how web browsers work.
 
----
+## Project Structure
 
-## ✨ What is Project Golem?
+```
+golemjs/
+├── internal/
+│   ├── ast/          # Abstract Syntax Tree implementation
+│   ├── lexer/        # JavaScript tokenizer
+│   ├── parser/       # JavaScript parser
+│   └── interpreter/  # JavaScript interpreter
+└── tests/            # Test files
 
-**Project Golem** is an experimental learning project focused on understanding JavaScript at a fundamental level by rebuilding it from the ground up—complete with a toy DOM, event system, and rendering pipeline. Think of it as a miniature spiritual clone of a browser, fully under developer control.
+toybrowser/
+├── internal/
+│   ├── html/         # HTML parser and DOM implementation
+│   ├── css/          # CSS parser and styling
+│   ├── layout/       # Layout engine
+│   └── render/       # Rendering engine
+└── examples/         # Example applications
+```
 
-<!-- ritual.tag: ⟐Δ⋏ -->
+## What We've Built
 
----
+### 1. JavaScript Engine (GolemJS)
 
-## 🗺️ Goals
+We've implemented a JavaScript engine that can:
+- Parse JavaScript code into an AST
+- Evaluate basic JavaScript expressions
+- Handle variables and scope
+- Support functions and function calls
+- Process basic data types (numbers, strings, booleans)
+- Handle control flow (if/else, while loops)
 
-- Build a working JavaScript interpreter in Go
-- Simulate a browser-like environment including the DOM and basic APIs
-- Recreate `document`, `createElement`, `appendChild`, etc.
-- Implement a basic event loop and event handling system
-- (Optional) Render DOM output to CLI or static HTML
-- Learn deeply about how JavaScript and the browser actually work
+Key components:
+- **Lexer**: Breaks JavaScript code into tokens
+- **Parser**: Builds an Abstract Syntax Tree (AST)
+- **Interpreter**: Evaluates the AST and produces results
+- **Environment**: Manages variable scope and closures
 
----
+### 2. HTML Parser and DOM
 
-## 🧱 Tech Stack
+We've implemented a basic HTML parser that:
+- Parses HTML into a DOM tree
+- Handles different node types (elements, text, comments)
+- Supports attributes and nested elements
+- Maintains parent-child relationships
 
-- **Language**: Go
-- **HTML Parser**: [`golang.org/x/net/html`](https://pkg.go.dev/golang.org/x/net/html)
-- **Rendering**: CLI (text-based), HTML output, or future GUI extensions
+The DOM implementation includes:
+- **Node Types**: Element, Text, Comment, Doctype
+- **Node Properties**: Tag name, attributes, children
+- **Tree Structure**: Parent-child relationships
+- **Document Object**: Root of the DOM tree
 
----
+### 3. Integration
 
-## 🔭 Milestones
+The project demonstrates how:
+- JavaScript can interact with the DOM
+- HTML is parsed into a tree structure
+- JavaScript code is executed in the context of a web page
+- The browser's rendering pipeline works
 
-- ✅ **Phase 1**: Core interpreter (tokenizer, parser, AST, evaluator)
-- ⬜ **Phase 2**: DOM API + basic standard library
-- ⬜ **Phase 3**: Event system + simple async behavior
-- ⬜ **Phase 4**: Visual rendering (terminal or browser output)
+## Learning Focus
 
----
+This project is designed to help understand:
+1. How JavaScript works at a fundamental level
+2. How the DOM represents web pages
+3. How JavaScript and the DOM interact
+4. How web browsers process and display content
 
-## 🧙 Getting Started
+## Next Steps
 
-Coming soon—once the repo has its first few components, this section will document:
-- How to run the interpreter
-- How to load HTML + JS
-- How to hack on the internals
+1. Implement CSS parsing and styling
+2. Add layout engine for positioning elements
+3. Implement rendering engine
+4. Add more JavaScript features (objects, arrays, etc.)
+5. Implement event handling
+6. Add network capabilities for loading resources
 
----
+## Running the Project
 
-## 🧪 License
+1. Build the JavaScript engine:
+```bash
+cd golemjs
+go test ./...
+```
 
-MIT
+2. Build the toy browser:
+```bash
+cd toybrowser
+go run examples/simple/main.go
+```
+
+## Contributing
+
+This is a learning project. Feel free to:
+1. Fork the repository
+2. Add new features
+3. Fix bugs
+4. Improve documentation
+5. Share what you've learned
+
+## License
+
+MIT License - feel free to use this code for learning and experimentation.
